@@ -18,7 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 80
 
 # Run pull_models.py to download the model
-RUN python pull_models.py
+RUN python mistral.py
 
 # Run app.py when the container launches
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "80"]
