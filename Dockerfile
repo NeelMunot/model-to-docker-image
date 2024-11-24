@@ -5,8 +5,11 @@ FROM python:3.9-slim
 # Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
+# Copy the requirements file into the container
+COPY requirements.txt /app/requirements.txt
+
+# Copy the requirements file into the container
+COPY mistral.py /app/mistral.py
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
